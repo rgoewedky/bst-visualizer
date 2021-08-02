@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" /><meta
+    content="IE=edge"
+    http-equiv="X-UA-Compatible"
+  /><meta content="width=device-width,initial-scale=1" name="viewport" /><link
+    href="./css/style.css"
+    rel="stylesheet"
+  /><link href=https://fonts.googleapis.com rel=preconnect><link
+  href=https://fonts.gstatic.com rel=preconnect crossorigin><link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto+Mono&display=swap"
+    rel="stylesheet"
+  /><link href=./assets/icons/favicon-32x32.png rel=icon sizes=32x32 type=image/png><title>
+    BST Visualizer
+  </title>
+  <h1 id="header">Binary Search Tree Visualizer</h1>
+  <hr class="horizontal" />
+  <div id="big-container">
+    <div class="container">
+      <div class="container-1">
+        <div class="input-div">
+          <input
+            class="input"
+            id="insert-input"
+            name="ntoids"
+            placeholder=""
+            type="number"
+            max="5"
+            min="0"
+          />
+          <button id="insert" class="visualize">insert</button>
+        </div>
+        <div class="input-div">
+          <input
+            class="input"
+            id="search-input"
+            name="ntoids"
+            placeholder=""
+            type="number"
+          />
+          <button id="search" class="visualize">search</button>
+        </div>
+        <div class="input-div">
+          <input
+            class="input"
+            id="delete-input"
+            name="ntoids"
+            placeholder=""
+            type="number"
+          />
+          <button id="delete" class="visualize">delete</button>
+        </div>
+        <div class="input-div buttons-div">
+          <div class="extra generate">
+            <button id="generate" class="visualize">generate</button>
+          </div>
+          <div class="extra reset">
+            <button id="reset" class="visualize">reset</button>
+          </div>
+          <div class="extra traversal">
+            <button id="traversal" class="visualize">print</button>
+          </div>
+        </div>
+      </div>
+      <svg height="455px" id="canvas"></svg>
+    </div>
+    <div id="logger">
+      <p style="padding: 0.6rem 0; text-align: center; font-size: 100%">Logs</p>
+      <hr />
+      <div id="logger-content">
+        <p
+          style="
+            padding: 0.6rem 0;
+            font-size: 60%;
+            text-align: center;
+            opacity: 90%;
+            color: rgba(245, 245, 245, 0.508);
+          "
+        >
+          most recent log appears at the top
+        </p>
+        <hr class="consoleline" />
+      </div>
+    </div>
+    <div class="big-box">
+      <div class="dialog-box">
+        <h2>Which traversal do you want to print?</h2>
+        <button id="pre">pre-order</button> <button id="in">in-order</button>
+        <button id="post">post-order</button>
+        <button id="level">level-order</button> <button id="close">none</button>
+      </div>
+    </div>
+    <div id="small-box">
+    </div>
+  </div>
+  <script src="./js/live.js"></script>
+</html>

@@ -1,0 +1,497 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+body {
+  background-color: #353d45;
+  font-family: "Josefin Sans", monospace;
+  overflow: hidden;
+}
+
+#header {
+  width: 100%;
+  /* border: 1px solid red; */
+  font-size: 2rem;
+  padding: 1.1rem 0;
+  text-align: center;
+  background-color: violet;
+  color: whitesmoke;
+}
+
+.horizontal {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #f3f3f3;
+  animation: loading 400ms linear 0s 1 normal;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  /* background-color: #353d45; */
+  /* background-image: url('tree_ss.svg'); */
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: violet;
+  /* border: 1px solid red; */
+}
+
+/* .container-2 {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  justify-content: ;
+}
+
+#logs {
+  border: 1px solid greenyellow;
+} */
+
+.input-div {
+  display: flex;
+  width: 50%;
+  padding: 2em;
+  margin: 0 auto;
+
+  /* border: 1px solid red; */
+}
+
+.visualize {
+  font-weight: 600;
+  font-size: 1.15rem;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-family: "Josefin Sans", monospace;
+}
+
+.buttons-div {
+  padding: 2em 0;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+.extra {
+  display: flex;
+  padding: 0 0.5rem;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  /* border: 1px solid red; */
+}
+
+#traversal,
+#generate,
+#reset {
+  padding: 0 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px 4px 4px 4px;
+  background-color: rgb(61, 124, 242);
+}
+
+#traversal:hover,
+#generate:hover,
+#reset:hover {
+  background-color: rgb(0, 102, 255);
+}
+
+#traversal {
+  display: none;
+  /* border: 1px solid red; */
+}
+
+/* #content {
+  display: inline-block;
+  border: 1px solid red;
+  z-index: 2;
+}
+
+#traversal:hover #content {
+  display: block;
+  border: 1px solid red;
+} */
+
+.input {
+  font-family: "Roboto Mono", monospace;
+  display: inline-block;
+  width: 100%;
+  background: whitesmoke;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  box-shadow: rgba(204, 219, 232, 0.7) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+#insert {
+  border: none;
+  background-color: rgba(119, 248, 119, 0.864);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#delete {
+  border: none;
+  background-color: rgba(218, 68, 68, 0.912);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#search {
+  border: none;
+  background: rgba(250, 181, 8, 0.892);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#insert:hover {
+  background-color: rgba(0, 255, 0, 0.953);
+  cursor: pointer;
+}
+
+#delete:hover {
+  background-color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+
+#search:hover {
+  background: rgb(255, 238, 0);
+  cursor: pointer;
+}
+
+/* .node-val {
+  font-weight: 600;
+  font-size: 1.5em;
+} */
+
+.node,
+.edges,
+.node-val,
+#logger,
+#desc {
+  font-family: "Roboto Mono", monospace;
+  display: none;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+/* .node {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash infinite linear alternate;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+} */
+
+/* svg {
+  border: 1px solid greenyellow;
+  width: 100%;
+  height: 100%;
+  font-size: 1.15rem;
+} */
+.node-val {
+  font-size: 1.2rem;
+}
+
+svg {
+  top: 19.4rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 19.4rem;
+  font-size: 1.15rem;
+  /* border: 1px solid yellow; */
+}
+
+#small-box{
+  display: flex;
+  position: absolute;
+  top: 19.4rem;
+  left: 0;
+  width:18%;
+  z-index: 2;
+  color: white;
+  /* text-justify: distribute-all-lines; */
+  flex-direction: column;
+  justify-content:flex-start;
+  text-align: start;
+  padding:5px 0 0 5px;
+  font-size: 1.6rem;
+  
+}
+
+#small-box p{
+  font-size: 100%;
+}
+
+
+.big-box {
+  display: none;
+}
+@media(max-width: 263px){
+  #small-box{
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .generate {
+    display: none;
+  }
+}
+
+@media (max-width: 461px) {
+  .traversal {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  * {
+    font-size: 12px;
+  }
+
+  #small-box{
+    display: none;
+  }
+
+  #traversal {
+    display: block;
+  }
+
+  .big-box {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .dialog-box {
+    display: flex;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    height: 370px;
+    width: 25%;
+    /* border: 1px solid red; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    background: rgb(255, 211, 255);
+    border-radius: 5px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .dialog-box button {
+    padding: 3% 1%;
+    width: 45%;
+    font-family: inherit;
+    font-size: 1.25rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    background-color: violet;
+  }
+
+  .dialog-box button:hover {
+    background-color: magenta;
+  }
+
+  span {
+    color: lightgreen;
+    font-size: 100%;
+  }
+
+  .consoleline {
+    width: 100%;
+    border: none;
+    border-bottom: 1px dashed grey;
+  }
+
+  #big-container,
+  .container {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+  }
+  .visualize {
+    font-family: "Josefin Sans", monospace;
+  }
+
+  #logger {
+    /* position: absolute;
+    top: 2.rem;
+    right: 0; */
+    display: block;
+    z-index: 0;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    background: #353d45;
+    /* border: 1px solid red; */
+    padding: 0.5rem 0.5rem;
+    /* box-shadow: rgba(238, 238, 238, 0.981) 0px 2px 4px 0px,
+      rgba(238, 241, 242, 0.919) 0px 2px 16px 0px; */
+    border-left: 2px solid white;
+    width: 25%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 4.3rem;
+    padding-bottom: 4.3rem;
+    overflow: auto;
+    /* border: 1px solid red; */
+  }
+
+  #logger-content {
+    font-size: 100%;
+    /* border: 1px solid red; */
+    z-index: 1;
+  }
+
+  /* .container {
+    width: 75%;
+    border-right: 2px solid white;
+    overflow: hidden;
+  } */
+
+  .container-1 {
+    flex-wrap: nowrap;
+
+    /* border: 1px solid red; */
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    top: 4.3rem;
+    left: 0;
+    z-index: 0;
+    padding: 10px;
+    padding-right: 25%;
+    /* display: none; */
+    /* border-right: 2px solid white; */
+  }
+
+  /* .buttons-div {
+    border: 1px solid red;
+  }*/
+
+  /* .extra {
+    border: 1px solid red;
+  } 
+  */
+
+  /* #traversal,
+  #generate,
+  #reset {
+    padding: 0 0.5rem;
+  } */
+
+  .node-val,
+  #logger {
+    font-size: 1.6rem;
+  }
+
+  /* #desc {
+    display: block;
+    z-index: 0;
+    color: white;
+    background: #353d45;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    border: 1px solid red;
+    box-shadow: rgba(238, 238, 238, 0.981) 0px 2px 2px 0px,
+      rgba(238, 241, 242, 0.919) 0px 2px 9px 0px;
+    padding: 0.5rem 0.5rem;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+     border-radius: 9px;
+    text-align: center;
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  } */
+
+  /* #showhide {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: aqua;
+  } */
+
+  svg {
+    top: 13.2rem;
+    left: 0;
+    position: absolute;
+    width: 75%;
+    height: 100vh;
+    padding-bottom: 13.2rem;
+    /* border: 1px solid yellow; */
+  }
+  /* height: 600px; */
+  /* font-size: 1.15rem;
+  }
+
+  /* .node-val {
+    font-size: 2.2rem;
+  } */
+
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+    /* z-index: -1; */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgb(255, 211, 255);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: violet;
+  }
+}
